@@ -48,6 +48,10 @@ public class EnregistrerToken extends Contexte {
             this.addFieldError("pseudo","Le pseudo est déjà pris");
             return "accueil";
         }
+        catch (IllegalArgumentException e) {
+            this.addFieldError("token","Le token saisi est invalide !");
+            return INPUT;
+        }
 
     }
 
