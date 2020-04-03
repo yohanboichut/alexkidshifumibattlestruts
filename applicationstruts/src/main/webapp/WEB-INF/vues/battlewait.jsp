@@ -77,7 +77,7 @@
 </div>
     <div class="border-div">
         <div style="text-align: center;">
-            En attente du choix de l'adversaire !!
+            <s:text name="battlewait.message"/>
         </div>
     </div>
 

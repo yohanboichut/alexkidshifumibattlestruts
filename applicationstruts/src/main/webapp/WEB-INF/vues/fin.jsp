@@ -25,9 +25,9 @@
 <div class="border-div">
 
     <span class="fontcostumisee">
-        Fin de la partie. Le vainqueur est <s:property value="vainqueur"/> par le score de <s:property value="scoreJoueur1"/> - <s:property value="scoreJoueur2"/>.
+        <s:text name="fin.message1"/><s:property value="vainqueur"/><s:text name="fin.message2"/><s:property value="scoreJoueur1"/> - <s:property value="scoreJoueur2"/>.
         <br>
-        Pour refaire une partie, veuillez cliquer <s:a action="deconnexion">ici</s:a>.
+        <s:text name="fin.message3"/><s:a action="deconnexion"><s:text name="fin.message4"/></s:a>.
 
     </span>
 </div>

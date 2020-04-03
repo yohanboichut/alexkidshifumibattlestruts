@@ -24,7 +24,7 @@
 
 <div class="border-div">
 <span class="fontcostumisee">
-    Bonjour, <s:property value="pseudo"/>, Saisir le token que vous avez reçu :
+    <s:text name="ecrantoken.bonjour"><s:property value="pseudo"/><s:text name="saisietoken.message"/>
         <br>
         <br>
     <s:form method="POST" action="enregistrertoken">

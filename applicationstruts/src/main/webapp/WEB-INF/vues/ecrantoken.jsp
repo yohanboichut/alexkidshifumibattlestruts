@@ -39,7 +39,7 @@
 </div>
 <div class="border-div">
     <span class="fontcostumisee">
-    Bonjour, <s:property value="pseudo"/>, voici le token à transmettre à votre invité :
+    <s:text name="ecrantoken.bonjour"/><s:property value="pseudo"/><s:text name="ecrantoken.message"/>
         <br>
         <br>
     <span style="font-size: 11pt">
@@ -47,7 +47,7 @@
     </span>
         <br>
     <br>
-    Veuillez patienter en attendant son arrivée...
+    <s:text name="ecrantoken.wait"/>
     </span>
 </div>
 </body>
