@@ -1,0 +1,51 @@
+body {
+    background-color: palegoldenrod;
+}
+
+
+.center-div {
+    margin: 0 auto;
+    width: 600px;
+    font-family: Arial;
+    font-size: large;
+}
+
+.border-div {
+    margin: 0 auto;
+    width: 600px;
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+    font-family: Arial;
+    font-size: large;
+}
+
+.fontcostumisee{
+    font-family: Arial;
+    font-size: large;
+}
+
+label {
+    font-family: Arial;
+    font-size: large;
+}
+
+span.scoreboard {
+    font-family: Arial;
+    font-size: x-large;
+    color: white;
+}
+
+
+table.plateau {
+    background-image: url("images/fond.png");
+    align-content: center;
+    width: 600px;
+}
+
+
+
+input {
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    font-size: large;
+}

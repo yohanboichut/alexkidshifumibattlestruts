@@ -1,0 +1,10 @@
+interfaces/exceptions/ChoixIncompletsException.class
+interfaces/exceptions/ChoixInattenduException.class
+interfaces/type/Score.class
+interfaces/exceptions/PartieDejaPleineException.class
+interfaces/exceptions/PartieNonTermineeException.class
+interfaces/exceptions/TicketPerimeException.class
+interfaces/facade/FacadeAlexKiddBattleOnLine.class
+interfaces/exceptions/PseudoDejaPrisException.class
+interfaces/exceptions/ChoixDejaFaitException.class
+interfaces/exceptions/TicketInvalideException.class

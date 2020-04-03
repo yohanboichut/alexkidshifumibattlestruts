@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.custom.i18n.resources" value="mesTextes"/>
+
+    <package name="/alexkidd" extends="struts-default">
+        <default-action-ref name="accueil"></default-action-ref>
+        <action name="accueil" class="actions.Accueil">
+            <result>/WEB-INF/vues/accueil.jsp</result>
+        </action>
+
+        <action name="enregistrerpseudo" class="actions.EnregistrerPseudo">
+            <result name="recuperertoken">/WEB-INF/vues/ecrantoken.jsp</result>
+            <result name="saisirtoken">/WEB-INF/vues/saisietoken.jsp</result>
+            <result name="input">/WEB-INF/vues/accueil.jsp</result>
+        </action>
+
+        <action name="enregistrertoken" class="actions.EnregistrerToken">
+            <result name="input">/WEB-INF/vues/saisietoken.jsp</result>
+            <result name="accueil">/WEB-INF/vues/accueil.jsp</result>
+            <result name="success" type="redirectAction">initialiserpartie</result>
+        </action>
+
+        <action name="attendreadversaire" class="actions.AttendreAdversaire">
+            <result name="success" type="redirectAction">initialiserpartie</result>
+            <result name="input">/WEB-INF/vues/ecrantoken.jsp</result>
+        </action>
+
+
+        <action name="attendrechoixadversaire" class="actions.AttendreChoixAdversaire">
+            <result name="success" type="redirectAction">initialiserpartie</result>
+            <result name="input">/WEB-INF/vues/battlewait.jsp</result>
+        </action>
+
+
+        <action name="initialiserpartie" class="actions.InitialiserPartie">
+            <result name="partieencours">/WEB-INF/vues/battle.jsp</result>
+            <result name="partieterminee">/WEB-INF/vues/fin.jsp</result>
+        </action>
+
+
+
+        <action name="jouer" class="actions.FaireChoix">
+            <result name="success" type="redirectAction">attendrechoixadversaire</result>
+        </action>
+        <action name="deconnexion" class="actions.Deconnexion">
+            <result name="success">/WEB-INF/vues/accueil.jsp</result>
+        </action>
+    </package>
+
+</struts>
