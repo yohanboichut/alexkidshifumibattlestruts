@@ -17,26 +17,25 @@
 <h1 align="center"><s:text name="accueil.titre"/></h1>
 <div class="center-div">
 
-<div style="text-align: center;">
-    <img src="images/AlexKidd.jpg">
-</div>
+    <div style="text-align: center;">
+        <img src="images/AlexKidd.jpg">
+    </div>
 </div>
 
 <div class="border-div">
-<span class="fontcostumisee">
-    <s:text name="ecrantoken.bonjour"><s:property value="pseudo"/><s:text name="saisietoken.message"/>
+    <span class="fontcostumisee">
+        <s:text name="ecrantoken.bonjour"/><s:property value="pseudo"/><s:text name="saisietoken.message"/>
         <br>
         <br>
-    <s:form method="POST" action="enregistrertoken">
-        <s:textfield name="token"  label="token"/>
+        <s:form method="POST" action="enregistrertoken">
+            <s:textfield name="token"  label="token"/>
+         <br>
+            <s:submit key="submit.label"/>
+        </s:form>
         <br>
-        <s:submit key="submit.label"/>
-    </s:form>
         <br>
-    <br>
 
     </span>
 </div>
-
 </body>
 </html>

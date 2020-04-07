@@ -2,7 +2,7 @@ package actions;
 
 
 import interfaces.type.Score;
-import tools.Menu;
+import tools.OutilsInternationalisation;
 
 import java.util.List;
 
@@ -22,7 +22,6 @@ public class InitialiserPartie extends Contexte implements Partie {
     public String execute() throws Exception {
         String pseudo = (String) getSession().get("pseudo");
         this.scoreCourant = getFacadeAlexKiddBattleOnLine().getScoreCourant(pseudo);
-
 
         if (getFacadeAlexKiddBattleOnLine().partieTerminee(pseudo)) {
             this.vainqueur = getFacadeAlexKiddBattleOnLine().getVainqueur(pseudo);
@@ -68,7 +67,8 @@ public class InitialiserPartie extends Contexte implements Partie {
 
     @Override
     public List<String> getChoixJoueurs() {
-        return Menu.CHOIX_JOUEURS;
-    }
 
+
+        return (List<String>) getSession().get("choixJoueursMenu");
+    }
 }

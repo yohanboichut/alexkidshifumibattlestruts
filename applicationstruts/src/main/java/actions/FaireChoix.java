@@ -1,6 +1,7 @@
 package actions;
 
 import interfaces.type.Score;
+import tools.OutilsInternationalisation;
 
 public class FaireChoix extends Contexte {
 
@@ -18,7 +19,7 @@ public class FaireChoix extends Contexte {
     @Override
     public String execute() throws Exception {
         String pseudo = (String)this.getSession().get("pseudo");
-        getFacadeAlexKiddBattleOnLine().choixJoueur(pseudo,choix);
+        getFacadeAlexKiddBattleOnLine().choixJoueur(pseudo, OutilsInternationalisation.TRADUCTION.get(choix));
         return SUCCESS;
     }
 

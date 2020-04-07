@@ -5,9 +5,10 @@ import interfaces.facade.FacadeAlexKiddBattleOnLine;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.SessionAware;
 import tools.ChoixConnexion;
-import tools.Menu;
+import tools.OutilsInternationalisation;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public  abstract class Contexte extends ActionSupport implements ApplicationAware, SessionAware {
@@ -26,8 +27,9 @@ public  abstract class Contexte extends ActionSupport implements ApplicationAwar
         return facadeAlexKiddBattleOnLine;
     }
 
+
     public List<ChoixConnexion> getMenu(){
-        return Menu.CHOIX;
+        return (List<ChoixConnexion>) getSession().get("menu");
     }
 
     @Override
@@ -38,5 +40,10 @@ public  abstract class Contexte extends ActionSupport implements ApplicationAwar
     @Override
     public void setSession(Map<String, Object> map) {
         this.session = map;
+    }
+
+    @Override
+    public String execute() throws Exception {
+        return SUCCESS;
     }
 }

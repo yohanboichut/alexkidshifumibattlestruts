@@ -1,7 +1,7 @@
 package actions;
 
 import interfaces.type.Score;
-import tools.Menu;
+import tools.OutilsInternationalisation;
 
 import java.util.List;
 
@@ -19,12 +19,13 @@ public class AttendreChoixAdversaire extends Contexte implements Partie{
 
     private Score scoreCourant;
 
+
+
     @Override
     public String execute() throws Exception {
         String pseudo = (String)this.getSession().get("pseudo");
         int idCourant = (Integer) this.getSession().get("numeroOperation");
         scoreCourant = getFacadeAlexKiddBattleOnLine().getScoreCourant(pseudo);
-
         if (scoreCourant.getNumeroOperation() != idCourant) {
             this.getSession().put("numeroOperation",scoreCourant.getNumeroOperation());
             return SUCCESS;
@@ -66,7 +67,9 @@ public class AttendreChoixAdversaire extends Contexte implements Partie{
 
     @Override
     public List<String> getChoixJoueurs() {
-        return Menu.CHOIX_JOUEURS;
+
+
+        return (List<String>) getSession().get("choixJoueursMenu");
     }
 
 

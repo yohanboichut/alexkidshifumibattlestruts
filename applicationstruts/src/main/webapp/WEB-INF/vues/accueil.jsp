@@ -23,9 +23,9 @@
 </div>
 <div class="border-div">
 <s:form method="POST" action="enregistrerpseudo">
-    <s:textfield name="pseudo"  label="Nom"/>
+    <s:textfield name="pseudo"  key="accueil.pseudo"/>
     <br>
-    <s:radio name="choix" list="menu" listKey="choix" listValue="libelle"/>
+    <s:radio name="choix" list="menu" listKey="choix" listValue="libelle" key="accueil.choix"/>
     <s:submit key="submit.label"/>
 </s:form>
 </div>

@@ -1,0 +1,25 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+    <field name="pseudo">
+        <field-validator type="requiredstring">
+            <message key="erreur.pseudoobligatoire"/>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">2</param>
+            <param name="maxLength">8</param>
+            <message key="erreur.pseudotaille"/>
+        </field-validator>
+    </field>
+    <field name="choix">
+        <field-validator type="int">
+            <param name="min">1</param>
+            <param name="max">2</param>
+            <message key="erreur.choix"/>
+        </field-validator>
+        <field-validator type="required">
+            <message key="erreur.choix"/>
+        </field-validator>
+    </field>
+
+</validators>

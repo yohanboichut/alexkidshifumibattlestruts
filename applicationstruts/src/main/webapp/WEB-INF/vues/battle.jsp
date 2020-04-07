@@ -64,7 +64,7 @@
     <div class="border-div">
         <div style="text-align: center;">
             <s:form method="POST" action="jouer">
-                <s:select name="choix" list="%{choixJoueurs}" label="Faites votre choix"/>
+                <s:select name="choix" list="%{choixJoueurs}" key="battle.faitesvotrechoix"/>
                 <br>
                 <s:submit key="submit.label"/>
             </s:form>
