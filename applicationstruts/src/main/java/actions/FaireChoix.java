@@ -18,7 +18,7 @@ public class FaireChoix extends Contexte {
 
     @Override
     public String execute() throws Exception {
-        String pseudo = (String)this.getSession().get("pseudo");
+        String pseudo = (String)this.getSession().get(Contexte.PSEUDO);
         getFacadeAlexKiddBattleOnLine().choixJoueur(pseudo, OutilsInternationalisation.TRADUCTION.get(choix));
         return SUCCESS;
     }

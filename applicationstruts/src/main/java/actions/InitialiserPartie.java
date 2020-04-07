@@ -20,7 +20,7 @@ public class InitialiserPartie extends Contexte implements Partie {
 
     @Override
     public String execute() throws Exception {
-        String pseudo = (String) getSession().get("pseudo");
+        String pseudo = (String) getSession().get(Contexte.PSEUDO);
         this.scoreCourant = getFacadeAlexKiddBattleOnLine().getScoreCourant(pseudo);
 
         if (getFacadeAlexKiddBattleOnLine().partieTerminee(pseudo)) {
@@ -69,6 +69,6 @@ public class InitialiserPartie extends Contexte implements Partie {
     public List<String> getChoixJoueurs() {
 
 
-        return (List<String>) getSession().get("choixJoueursMenu");
+        return (List<String>) getSession().get(Contexte.MENU_JOUEUR);
     }
 }

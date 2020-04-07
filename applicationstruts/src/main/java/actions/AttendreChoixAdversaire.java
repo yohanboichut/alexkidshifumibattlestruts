@@ -9,11 +9,11 @@ public class AttendreChoixAdversaire extends Contexte implements Partie{
 
 
     public String getToken() {
-        return (String)getSession().get("token");
+        return (String)getSession().get(Contexte.TOKEN);
     }
 
     public String getPseudo() {
-        return (String)getSession().get("pseudo");
+        return (String)getSession().get(Contexte.PSEUDO);
     }
 
 
@@ -23,11 +23,11 @@ public class AttendreChoixAdversaire extends Contexte implements Partie{
 
     @Override
     public String execute() throws Exception {
-        String pseudo = (String)this.getSession().get("pseudo");
-        int idCourant = (Integer) this.getSession().get("numeroOperation");
+        String pseudo = (String)this.getSession().get(Contexte.PSEUDO);
+        int idCourant = (Integer) this.getSession().get(Contexte.NUMERO_OPERATION);
         scoreCourant = getFacadeAlexKiddBattleOnLine().getScoreCourant(pseudo);
         if (scoreCourant.getNumeroOperation() != idCourant) {
-            this.getSession().put("numeroOperation",scoreCourant.getNumeroOperation());
+            this.getSession().put(Contexte.NUMERO_OPERATION,scoreCourant.getNumeroOperation());
             return SUCCESS;
         }
         else
@@ -69,7 +69,7 @@ public class AttendreChoixAdversaire extends Contexte implements Partie{
     public List<String> getChoixJoueurs() {
 
 
-        return (List<String>) getSession().get("choixJoueursMenu");
+        return (List<String>) getSession().get(Contexte.MENU_JEU);
     }
 
 

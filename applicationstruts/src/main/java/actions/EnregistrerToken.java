@@ -21,16 +21,16 @@ public class EnregistrerToken extends Contexte {
 
 
     public String getPseudo() {
-        return (String)this.getSession().get("pseudo");
+        return (String)this.getSession().get(Contexte.PSEUDO);
     }
 
     @Override
     public String execute() throws Exception {
-        String pseudo = (String) this.getSession().get("pseudo");
+        String pseudo = (String) this.getSession().get(Contexte.PSEUDO);
         try {
             getFacadeAlexKiddBattleOnLine().rejoindreUnePartie(pseudo,token);
             Score scoreCourant = getFacadeAlexKiddBattleOnLine().getScoreCourant(getPseudo());
-            this.getSession().put("numeroOperation",scoreCourant.getNumeroOperation());
+            this.getSession().put(Contexte.NUMERO_OPERATION,scoreCourant.getNumeroOperation());
             return SUCCESS;
 
         }

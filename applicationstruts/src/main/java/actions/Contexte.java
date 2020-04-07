@@ -5,14 +5,19 @@ import interfaces.facade.FacadeAlexKiddBattleOnLine;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.SessionAware;
 import tools.ChoixConnexion;
-import tools.OutilsInternationalisation;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 public  abstract class Contexte extends ActionSupport implements ApplicationAware, SessionAware {
 
+
+    public static final String PSEUDO = "pseudo";
+    public static final String MENU_JEU="menuJeu";
+    public static final String MENU_JOUEUR="menuJoueur";
+    public static final String FACADE = "facade";
+    protected static final String TOKEN = "token";
+    protected static final String NUMERO_OPERATION = "numeroOperation";
 
     private FacadeAlexKiddBattleOnLine facadeAlexKiddBattleOnLine;
 
@@ -29,12 +34,12 @@ public  abstract class Contexte extends ActionSupport implements ApplicationAwar
 
 
     public List<ChoixConnexion> getMenu(){
-        return (List<ChoixConnexion>) getSession().get("menu");
+        return (List<ChoixConnexion>) getSession().get(MENU_JEU);
     }
 
     @Override
     public void setApplication(Map<String, Object> map) {
-        this.facadeAlexKiddBattleOnLine = (FacadeAlexKiddBattleOnLine)map.get("facade");
+        this.facadeAlexKiddBattleOnLine = (FacadeAlexKiddBattleOnLine)map.get(FACADE);
     }
 
     @Override

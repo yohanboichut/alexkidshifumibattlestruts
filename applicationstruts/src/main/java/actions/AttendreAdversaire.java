@@ -7,21 +7,21 @@ public class AttendreAdversaire extends Contexte {
 
 
     public String getToken() {
-        return (String)getSession().get("token");
+        return (String)getSession().get(Contexte.TOKEN);
     }
 
     public String getPseudo() {
-        return (String)getSession().get("pseudo");
+        return (String)getSession().get(Contexte.PSEUDO);
     }
 
 
 
     @Override
     public String execute() throws Exception {
-        String pseudo = (String)this.getSession().get("pseudo");
+        String pseudo = (String)this.getSession().get(Contexte.PSEUDO);
         if (getFacadeAlexKiddBattleOnLine().partieCommencee(pseudo)) {
             Score scoreCourant = getFacadeAlexKiddBattleOnLine().getScoreCourant(getPseudo());
-            this.getSession().put("numeroOperation",scoreCourant.getNumeroOperation());
+            this.getSession().put(Contexte.NUMERO_OPERATION,scoreCourant.getNumeroOperation());
             return SUCCESS;
         }
         else

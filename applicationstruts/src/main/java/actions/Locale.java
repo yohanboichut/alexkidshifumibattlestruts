@@ -24,8 +24,8 @@ java.util.Locale ww_trans_i18N_locale = (java.util.Locale) this.getSession().get
         if (!locale.equals("en")) {
             locale = "fr";
         }
-        this.getSession().put("menu", OutilsInternationalisation.ASSOCIATION_MENU.get(locale));
-        this.getSession().put("choixJoueursMenu",OutilsInternationalisation.ASSOCIATION_CHOIX.get(locale));
+        this.getSession().put(Contexte.MENU_JEU, OutilsInternationalisation.ASSOCIATION_MENU.get(locale));
+        this.getSession().put(Contexte.MENU_JOUEUR,OutilsInternationalisation.ASSOCIATION_CHOIX.get(locale));
         return SUCCESS;
     }
 

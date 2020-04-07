@@ -40,11 +40,11 @@ public class EnregistrerPseudo extends Contexte {
 
     @Override
     public String execute() throws Exception {
-        this.getSession().put("pseudo",this.pseudo);
+        this.getSession().put(Contexte.PSEUDO,this.pseudo);
         if (choix == 1) {
             try {
                 this.token = this.getFacadeAlexKiddBattleOnLine().creerPartie(pseudo);
-                this.getSession().put("token",token);
+                this.getSession().put(Contexte.TOKEN,token);
                 return "recuperertoken";
             }
             catch (PseudoDejaPrisException e) {

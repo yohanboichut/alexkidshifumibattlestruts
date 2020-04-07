@@ -5,9 +5,9 @@ public class Deconnexion extends Contexte {
 
     @Override
     public String execute() throws Exception {
-        String pseudo = (String) getSession().get("pseudo");
+        String pseudo = (String) getSession().get(Contexte.PSEUDO);
         getFacadeAlexKiddBattleOnLine().finDePartie(pseudo);
-        getSession().remove("pseudo",pseudo);
+        getSession().remove(Contexte.PSEUDO,pseudo);
         return SUCCESS;
     }
 }
