@@ -52,6 +52,7 @@
         <action name="jouer" class="actions.FaireChoix">
             <result name="success" type="redirectAction">attendrechoixadversaire</result>
         </action>
+        
         <action name="deconnexion" class="actions.Deconnexion">
             <result type="redirectAction">accueil</result>
         </action>

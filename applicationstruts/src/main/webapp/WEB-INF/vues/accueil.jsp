@@ -14,6 +14,20 @@
 </head>
 <body>
 
+<div style="alignment: right;margin: 0 auto;width: 600px;">
+    <s:url var="langueEN" action="locale">
+        <s:param name="request_locale">
+            en
+        </s:param>
+    </s:url>
+    <s:url var="langueFR" action="locale">
+        <s:param name="request_locale">
+        fr
+        </s:param>
+    </s:url>
+    <s:a href="%{#langueEN}">english</s:a> / <s:a href="%{#langueFR}">français</s:a>
+</div>
+
 <h1 align="center"><s:text name="accueil.titre"/></h1>
 <div class="center-div">
 
