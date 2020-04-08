@@ -1,5 +1,7 @@
 package tools;
 
+import interfaces.facade.FacadeAlexKiddBattleOnLine;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -14,9 +16,9 @@ public  class OutilsInternationalisation {
     public static final String REJOINDRE_UNE_PARTIE_EN = "Join a game";
 
     public static List<ChoixConnexion> CHOIX_EN = Arrays.asList(new ChoixConnexion(1, CREER_UNE_PARTIE_EN), new ChoixConnexion(2, REJOINDRE_UNE_PARTIE_EN));
-    public static final String PIERRE = "Pierre";
-    public static final String CISEAUX = "Ciseaux";
-    public static final String FEUILLE = "Feuille";
+    public static final String PIERRE = FacadeAlexKiddBattleOnLine.PIERRE;
+    public static final String CISEAUX = FacadeAlexKiddBattleOnLine.CISEAUX;
+    public static final String FEUILLE = FacadeAlexKiddBattleOnLine.FEUILLE;
     public static final String PIERRE_EN = "Stone";
     public static final String CISEAUX_EN = "Scissors";
     public static final String FEUILLE_EN = "Paper";

@@ -21,11 +21,9 @@ public class Locale extends ActionSupport implements SessionAware {
     public String execute() throws Exception {
     java.util.Locale ww_trans_i18N_locale = (java.util.Locale) this.getSession().get("WW_TRANS_I18N_LOCALE");
         String locale =  (ww_trans_i18N_locale == null) ? "fr":ww_trans_i18N_locale.getLanguage();
-        System.out.println(1+" - "+locale);
         if (!locale.equals("en")&& !locale.equals("fr")) {
             locale = "fr";
         }
-        System.out.println(1+" - "+locale);
 
         this.getSession().put(Contexte.MENU_JEU, OutilsInternationalisation.ASSOCIATION_MENU.get(locale));
         this.getSession().put(Contexte.MENU_JOUEUR,OutilsInternationalisation.ASSOCIATION_CHOIX.get(locale));
